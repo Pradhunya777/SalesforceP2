@@ -1,0 +1,20 @@
+<apex:page standardController="ObjectThree__c">
+     
+    <apex:pageBlock title="ObjectThree View Page"> 
+        
+        <apex:pageBlockSection columns="2" title="Small fields">
+        
+            <apex:outputField value="{!ObjectThree__c.Name"/>
+            <apex:outputField value="{!ObjectThree__c.Email__C"/>
+            
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection columns="1" title="Big Fields">
+        
+            <apex:outputField value="{!ObjectThree__c.Desc__c"/>
+             
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    
+</apex:page>

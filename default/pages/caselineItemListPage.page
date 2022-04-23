@@ -1,0 +1,38 @@
+<apex:page standardController="Case_line_Item__c" recordSetVar="clis" extensions="caselineitem" action="{!addWorkOrderLineItem}">
+    <!-- Begin Default Content REMOVE THIS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        .toast {max-width:700px; margin: 0 auto;padding: 40px 20px 0 20px;font-size: 121%;}
+        .message {
+        width: 100%;
+        padding: 10px;
+        font-weight: normal;
+        text-align: center;
+        background-color: var(--sds-c-alert-color-background,#706e6b);
+        background-image: var(--sds-c-alert-image-background,linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent));
+        background-size: var(--sds-c-alert-size-background,64px 64px);
+        border-radius: 0;
+        border: none;
+        
+        }
+        .message.warningM3{background-color: #fe9339;color: #080707;}
+        .message.errorM3{background-color: #ea001e;}
+        img.msgIcon{display: none;}
+        table.messageTable{margin: 0 auto !important;text-align: center;font-size: 14px;}
+        .messageText{display: flex;align-items: center;}
+        .messageText h4{padding-right: 5px;}
+        .warningM3 table.messageTable tr:first-child td:first-child:before{content: '\f071';font-family: FontAwesome;font-size: 18px;color: #514f4d;}
+        .errorM3 table.messageTable tbody {display: flex;}
+        .errorM3 table.messageTable li {list-style-type: none;text-align: left;color: #fff;}
+        .errorM3 .messageText h4{color: #ffff;}
+        .errorM3 table.messageTable tr:first-child td:first-child:before{content: '\f06a';font-family: FontAwesome;font-size: 18px;color: #fff;}
+        .errorM3 table.messageTable ul{padding-left: 0 !important;}
+        .errorM3 .messageText{color:#fff;}
+
+
+    </style>
+    
+    <div class="toast">
+        <apex:pageMessages id="pageMsgs"/>
+    </div>
+</apex:page>

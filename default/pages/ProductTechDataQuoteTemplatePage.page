@@ -1,0 +1,41 @@
+<apex:page controller="QuotePDFLineItemController" showHeader="false" sidebar="false" cache="false" contentType="text/xml"  action="{!init}">    
+    <block-container display-align="center" width="100%">  
+       <!-- <block text-align="left" font-size="small"  padding="5"> 
+         <external-graphic content-height="450" content-width="520" 
+                           src="https://lohiacorplimited--dev.my.salesforce.com/servlet/servlet.ImageServer?id=0156D000000WqBY&oid=00D6D0000000Nz9"/>
+        </block>
+		-->
+     <block>
+         <table margin-top="10pt" table-layout="fixed" width="100%">
+             <table-column column-width="100%"/>             
+            <table-body>    
+                <table-row>                       
+                        <table-cell display-align="center" padding="5">
+                            <block text-align="center" font-size="small">                                
+                              <inline text-decoration="underline">Technical Data</inline>
+                            </block>
+                        </table-cell>                           
+                     </table-row>
+                <apex:repeat id="productListId" value="{!productPriceSchdeuleContentList}" var="lineItem">
+                    <table-row>                       
+                        <table-cell display-align="center" padding="5">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.productName}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell>                           
+                     </table-row>                    
+                    <table-row>                       
+                        <table-cell display-align="center" padding="5">
+                            <block text-align="left" font-size="small">                                
+                                <block text-align="left" font-size="small"  padding="5"> 
+                                    <external-graphic content-height="450" content-width="520" src="{!lineItem.productImage}"/>
+                                </block>
+                            </block>
+                        </table-cell>                           
+                     </table-row> 
+                </apex:repeat>               
+            </table-body>
+        </table>
+    </block> 
+  </block-container>     
+</apex:page>

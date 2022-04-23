@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Decimal_Value_On_Quantity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT(REGEX(TEXT( Quantity__c ), &quot;^\\d+$&quot;)),  
+NOT( Quantity__c &lt;= 0))</errorConditionFormula>
+    <errorDisplayField>Quantity__c</errorDisplayField>
+    <errorMessage>Decimal value is not allowed in quantity field, Please provide whole number</errorMessage>
+</ValidationRule>

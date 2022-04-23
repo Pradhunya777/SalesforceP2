@@ -1,0 +1,46 @@
+<apex:page controller="QuotePDFLineItemController" showHeader="false" sidebar="false" cache="false" contentType="text/xml"  action="{!init}">    
+    <block-container display-align="center" width="100%">    
+    <block>
+         <table border-bottom-style="solid" margin-top="10pt" table-layout="fixed" width="100%" border-bottom="1px solid #ccc" border-top="1px solid #ccc">
+             <table-column column-width="7%"/>
+             <table-column column-width="20%"/>   
+             <table-column column-width="70%"/>   
+            <table-body>
+                <table-row border="1pt solid">
+                     <table-cell display-align="center" padding="5" border="1pt solid">
+                    <block font-weight="bold" font-size="small">
+                        <apex:outputText value="Sr.No" >
+                        </apex:outputText>
+                    </block>
+                </table-cell>
+                <table-cell display-align="center" padding="5" border="1pt solid"  number-columns-spanned="2">
+                      <block font-weight="bold" text-align="center" font-size="small">
+                          <inline>Table of Contents</inline>
+                          <!--<apex:outputText value="Table of Contents"></apex:outputText>-->
+                    </block>                   
+                </table-cell>                    
+                </table-row>               
+                <apex:repeat id="productListId" value="{!productTableOfContentList}" var="lineItem">
+                    <table-row border="1pt solid">
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">
+                                <apex:outputText value="{!lineItem.index}"></apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.offerType}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell>  
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.productName}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell>  
+                    </table-row>
+                </apex:repeat>
+            </table-body>
+        </table>
+    </block>    
+  </block-container>
+</apex:page>

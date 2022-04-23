@@ -1,0 +1,27 @@
+<apex:page controller="SearchAccountController">
+    
+    <apex:form >
+    
+        <apex:pageBlock >
+        
+            <apex:pageBlockSection title="Enter the Name which you want to search">
+                <apex:inputText value="{!searchText}" label="Account Name"/> 
+            </apex:pageBlockSection>
+                 
+            <apex:pageBlockSection >
+            	<apex:pageBlockTable value="{!accList}" var="a" id="aTable"> 
+                    <apex:column value="{!a.Name}"/>
+                    <apex:column value="{!a.NumberOfEmployees}"/>
+                    <apex:column value="{!a.Phone}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons Location="TOP">
+            	<apex:commandButton action="{!search}" value="Search The Record" reRender="aTable"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    
+    </apex:form>
+    
+</apex:page>

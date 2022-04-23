@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Add New Contact Record" icon-name="standard:contact">
+        <div class="slds-var-p-horizontal_small">
+            <div class="slds-media__body">
+                <div><lightning-input label="First Name" type="text" value={fname} onchange={fnameChange} ></lightning-input> </div>
+                <div><lightning-input label="Last Name"  type="text" value={lname} onchange={lnameChange} ></lightning-input> </div>
+                <div><lightning-input label="Email"      type="text" value={email} onchange={emailChange} ></lightning-input> </div>
+                <div><lightning-input label="Phone"      type="text" value={phone} onchange={phoneChange} ></lightning-input> </div>
+            </div>
+            <br /><lightning-button label="Submit" onclick={submitContact}></lightning-button>
+        </div> 
+    </lightning-card>     
+           
+</template>

@@ -1,0 +1,11 @@
+<apex:page controller="QuotePDFLineItemController" showHeader="false" sidebar="false" cache="false" contentType="text/xml"  action="{!init}">
+    <block-container>  
+        <block font-weight="bold">
+            
+            <apex:outputText value="{! If(termsConditionAdditionallyNegotiate != null ,'SPECIAL T AND C :','') }"></apex:outputText>
+        </block>
+        <block>
+            <apex:outputText value="{! If(termsConditionAdditionallyNegotiate != null ,termsConditionAdditionallyNegotiate,'') }"></apex:outputText>
+        </block>        
+    </block-container>
+</apex:page>

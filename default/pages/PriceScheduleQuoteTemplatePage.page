@@ -1,0 +1,83 @@
+<apex:page controller="QuotePDFLineItemController" showHeader="false" sidebar="false" cache="false" contentType="text/xml"  action="{!init}">    
+    <block-container display-align="center" width="100%">    
+    <block>
+         <table border-bottom-style="solid" margin-top="10pt" table-layout="fixed" width="100%" border-bottom="1px solid #ccc" border-top="1px solid #ccc">
+             <table-column column-width="7%"/>
+             <table-column column-width="50%"/> 
+             <table-column column-width="10%"/>
+             <table-column column-width="15%"/>
+             <table-column column-width="15%"/>
+            <table-body>
+                <table-row border="1pt solid">
+                     <table-cell display-align="center" padding="5" border="1pt solid">
+                    <block font-weight="bold" font-size="small">
+                        <apex:outputText value="Sr.No" ></apex:outputText>
+                    </block>
+                </table-cell>
+                <table-cell display-align="center" padding="5" border="1pt solid">
+                      <block font-weight="bold" text-align="center" font-size="small">
+                          <inline>EQUIPMENT</inline>
+                    </block>                   
+                </table-cell>  
+                    <table-cell display-align="center" padding="5" border="1pt solid">
+                        <block font-weight="bold" text-align="center" font-size="small">
+                            <inline>QTY</inline>
+                        </block>                   
+                    </table-cell> 
+                     <table-cell display-align="center" padding="5" border="1pt solid">
+                        <block font-weight="bold" text-align="center" font-size="small">
+                            <inline>Unit Price</inline>
+                        </block>                   
+                    </table-cell>
+                     <table-cell display-align="center" padding="5" border="1pt solid">
+                        <block font-weight="bold" text-align="center" font-size="small">
+                            <inline>Total Price</inline>
+                        </block>                   
+                    </table-cell>
+                </table-row>               
+                <apex:repeat id="productListId" value="{!productPriceSchdeuleContentList}" var="lineItem">
+                    <table-row border="1pt solid">
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">
+                                <apex:outputText value="{!lineItem.index}"></apex:outputText>
+                            </block>
+                        </table-cell>
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.productName}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell>  
+                         <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.quantity}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell> 
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.productListPrice}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell> 
+                        <table-cell display-align="center" padding="5" border="1pt solid">
+                            <block text-align="left" font-size="small">                                
+                               <apex:outputText value="{!lineItem.productListTotal}" escape="false"></apex:outputText>
+                            </block>
+                        </table-cell> 
+                     </table-row>
+                </apex:repeat>
+                <table-row border="1pt solid">
+                    <table-cell display-align="center" padding="5" border="1pt solid" number-columns-spanned="4">
+                        <block text-align="center" font-size="small">
+                            TOTAL PRICE:  <apex:outputText value="{!incotermsDescription}" escape="false"></apex:outputText> 
+                        </block>
+                    </table-cell>
+                    <table-cell display-align="center" padding="5" border="1pt solid">
+                        <block text-align="left" font-size="small">
+                            <apex:outputText value="{!netAmount}" escape="false"></apex:outputText>
+                        </block>
+                    </table-cell>
+                </table-row>
+            </table-body>
+        </table>
+    </block> 
+  </block-container>     
+</apex:page>

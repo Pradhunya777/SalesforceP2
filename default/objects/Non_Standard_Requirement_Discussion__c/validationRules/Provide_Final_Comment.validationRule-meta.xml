@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provide_Final_Comment</fullName>
+    <active>true</active>
+    <description>Is Status is completed final comment should Provide</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status__c,&apos;Completed&apos;),LEN (Final_Comment__c ) = 0)</errorConditionFormula>
+    <errorDisplayField>Final_Comment__c</errorDisplayField>
+    <errorMessage>Please Provide Final Comment</errorMessage>
+</ValidationRule>

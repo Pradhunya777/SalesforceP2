@@ -1,0 +1,27 @@
+<template>
+    <lightning-layout pull-to-boundary="medium">
+        <lightning-layout-item flexibility="auto" padding="horizontal-medium" style="width: 50%;">
+            <c-add-contact onaddcontact={addContactHandler}></c-add-contact> 
+        </lightning-layout-item>  
+ 
+        <lightning-layout-item flexibility="auto" padding="horizontal-medium" style="width: 50;">
+            <lightning-card title="Contact List" icon-name="standard:groups" if:true={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <c-contact-list-item key={contact.Id} contact={contact} onselected={contactSelected}></c-contact-list-item>
+                </template>
+            </lightning-card> 
+            <template if:true={contacts.error}> 
+                <div>No Data Available</div>  
+            </template> 
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="auto" padding="horizontal-medium" style="width: 50;">
+            <div class="slds-var-p-around_medium lgc-bg" if:true={selectedContact}>
+                <lightning-tile label={selectedContact.Name} type="media">
+                    <p class="slds-truncate">Name: {selectedContact.Name}</p>
+                    <p class="slds-truncate">Contact No : <lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone></p>
+                    <p class="slds-truncate">Email : <lightning-formatted-email value={selectedContact.Email}></lightning-formatted-email></p>
+                </lightning-tile>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>   
+</template>

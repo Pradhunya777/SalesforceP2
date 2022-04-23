@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ammount_greter_than_1000</fullName>
+    <active>false</active>
+    <errorConditionFormula>Ammount__c &lt;1000 &amp;&amp;  NOT(ISNEW())</errorConditionFormula>
+    <errorMessage>Ammount should not be &lt; 1000</errorMessage>
+</ValidationRule>

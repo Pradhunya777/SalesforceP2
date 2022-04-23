@@ -1,0 +1,41 @@
+<aura:component 
+  implements="flexipage:availableForRecordHome,force:hasRecordId"
+  access="global">
+  <div class="slds-p-around_small">
+    <h1 class="pd">This is my first lightnig component</h1> 
+      <p>Hello mr</p>
+    <div class="pd1">I am using div</div>
+      <p class="pd2">I am devil</p>
+      <p style="background-color:black; color:white">Hi everyone</p>
+  </div>
+    <br />
+    Aura if= <br />
+    <aura:attribute name="truthy" default="true" type="boolean"  />
+
+    <aura:if isTrue="{!v.truthy}">
+    True  
+    <aura:set attribute="else">
+      False
+    </aura:set>
+  </aura:if>  
+    
+    <br />
+    Aura for = <br/>
+    
+    <aura:attribute name="colorList" type="list" default="['red','orange','green']" />
+    	<aura:iteration items="{!v.colorList}" var="item">
+            {!item} <br />
+   	    </aura:iteration>  
+    
+    <br />
+    aura Map <br />
+    
+    <aura:attribute name="mapVar" type="list" />
+    
+    	<aura:iteration items="{!v.mapVar}" var="map" >
+            kay :- {!map.key} and value :- {!map.value} <br />
+        </aura:iteration>
+    
+    <lightning:button label="createMap" onclick="{!c.doCreateMap}" />
+    
+</aura:component>

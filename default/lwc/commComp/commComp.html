@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+
+        <template if:true={showDeleteButton}>
+          <div class="slds-clearfix">
+            <lightning-button  label="Delete Selected Commission" class="slds-float_right"
+            variant="brand" 
+            onclick={deleteSelRecords}>
+            </lightning-button>
+          </div>    
+        </template><br>
+
+        <lightning-datatable title="Commission Records "
+                                  data={data} columns={columns} 
+                                  key-field="Id"                                  
+                                  onrowselection={prepareSelectedRows}
+                                  onsave={saveHandleAction}
+                                 draft-values={fldsItemValues} >
+        </lightning-datatable>
+
+</lightning-card>
+</template>  

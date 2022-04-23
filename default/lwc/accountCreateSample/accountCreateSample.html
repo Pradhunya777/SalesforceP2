@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Account Creation1">
+     
+            
+            <lightning-record-form object-api-name={objectApiName}
+                                    fields={fieldsList} 
+                                    onsuccess={handleAccountCreate}>
+            </lightning-record-form>
+              
+
+    </lightning-card>                      
+
+   <!---- <div style="position: relative; width:80px; height: 80px; display:inline-block" >
+                
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </div>-->
+</template>

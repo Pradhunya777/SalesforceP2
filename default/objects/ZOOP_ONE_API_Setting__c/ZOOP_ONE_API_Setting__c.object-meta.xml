@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>This setting holds Zoop.one api endpoint and credentials (app-id, api-key) to verify PAN Number.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>ZOOP.ONE API Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

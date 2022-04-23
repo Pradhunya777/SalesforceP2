@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,force:hassobjectName" >
+    <div>
+        <c:HeaderComponent TagLine="BeerExplorer" 
+                           Message="Search And Orde Beer In A Very Easy Manner" />
+    
+    </div> 
+    <div> 
+        <br />
+   	 <c:BeerSearch />
+    </div>
+</aura:component>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Negative_Value_In_IssuedQuantity</fullName>
+    <active>true</active>
+    <errorConditionFormula>Issued_quantity__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Issued_quantity__c</errorDisplayField>
+    <errorMessage>Negative value is not allowed in issued quantity field, Please enter positive number.</errorMessage>
+</ValidationRule>

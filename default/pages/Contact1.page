@@ -1,0 +1,23 @@
+<apex:page standardController="Contact" >
+    <apex:form >
+        <apex:pageBlock title="Quick Contact Save">
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Contact.FirstName}"/> 
+                <apex:inputField value="{!Contact.LastName}"/>
+                <apex:inputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.Birthdate}"/>
+                <apex:inputField value="{!Contact.Phone}"/>
+                <apex:inputField value="{!Contact.LeadSource}"/>
+                <apex:inputField value="{!Contact.Account.name}"/>
+            </apex:pageBlockSection>  
+            <apex:pageBlockButtons location="Bottom" >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!quickSave}" value="QuickSave"/>
+                <apex:commandButton action="{!edit}" value="Edit"/>
+                <apex:commandButton action="{!Delete}" value="Delete"/>
+                <apex:commandButton action="{!Cancel}" value="Cancel"/>
+                <apex:commandButton action="{!List}" value="List"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

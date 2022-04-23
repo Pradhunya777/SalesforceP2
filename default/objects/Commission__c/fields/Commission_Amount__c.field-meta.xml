@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Overridden_Rate__c &gt; 0, Opportunity__r.Amount *   Overridden_Rate__c , Opportunity__r.Amount *  Sales_Agent__r.Default_Commission_Rate__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Commission Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

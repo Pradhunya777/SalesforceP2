@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <h3>
+            Calculatoer example
+        </h3> 
+        
+        <p>
+            <lightning-input value={Number1} name="fnumber" label="First Number" 
+            onchange={handleChanges}></lightning-input>
+            <lightning-input value={Number2} name="snumber" label="Second Number" 
+            onchange={handleChanges}></lightning-input>
+          
+        </p>
+        <div slot="footer">
+            <lightning-badge label={result}></lightning-badge>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,7 @@
+<apex:page controller="QuotePDFLineItemController" showHeader="false" sidebar="false" cache="false" contentType="text/xml" action="{!init}">
+    <block-container display-align="left" width="100%">
+        <block display-align="left">
+            <apex:outputText value="{!tableBody}"></apex:outputText>
+        </block>
+    </block-container>
+</apex:page>

@@ -1,0 +1,13 @@
+<aura:component implements="force:hasRecordId,force:hasSObjectName,flexipage:availableForRecordHome,force:lightningQuickAction"  access="global" Controller= "ProblemCatalougeController">
+    
+    <aura:attribute name="product" type="List" default="[{'label': 'Tapeline', 'value': 'Tapeline'},
+                                                          {'label': 'Loom', 'value': 'Loom'},
+                                                          ]"/>
+    
+    <div>
+        
+        <lightning:combobox name="product" label="Select product" value="{! v.selectedValue }"  options="{! v.product }" onchange="{! c.handleChange }"/>
+        
+    </div>
+    
+</aura:component>

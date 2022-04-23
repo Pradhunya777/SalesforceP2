@@ -1,0 +1,58 @@
+<apex:page controller="accConOppController" extensions="leadExtension">
+    
+    <apex:form > 
+        
+        <apex:pageMessages > 
+        
+        </apex:pageMessages>
+        
+        <apex:pageMessage severity="CONFIRM" strength="2" detail="I Am Devil" summary="I Am Devi Of My Life">
+            
+            I am a Message
+        
+        </apex:pageMessage>
+
+    
+    	<apex:pageBlock title="Account, Contact & Opportunity Create Page">
+          
+        	<apex:pageBlockSection title="Account Information"> 
+             
+            	<apex:inputText value="{!accName}" label="Account Name" required="true"/> 
+                <apex:inputText value="{!accEmployees}" label="Number Of Employees"/> 
+             
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Contact Information">
+             
+            	<apex:inputText value="{!conName}" label="Contact Name"/>  
+                <apex:inputText value="{!conEmail}" label="Contact Email"/>
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Opportunity Information">
+             
+            	<apex:inputText value="{!oppName}" label="Opportunity Name"/>  
+                <apex:inputText value="{!oppAmmount}" label="Opportunity Ammount"/>
+             
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="BOTTOM" >
+            	<apex:commandButton action="{!saveTheRecord}" value="Save The Record Of Account,Contact & Opportunity"/>
+            </apex:pageBlockButtons>
+         
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+        
+            <apex:pageBlockTable value="{!lList}" var="l">
+            
+                <apex:column value="{!l.Name}"/>
+                <apex:column value="{!l.status}"/>                
+            
+            </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+         
+    </apex:form>
+    
+</apex:page>

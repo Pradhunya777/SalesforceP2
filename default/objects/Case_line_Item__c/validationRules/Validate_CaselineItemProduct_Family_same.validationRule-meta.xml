@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_CaselineItemProduct_Family_same</fullName>
+    <active>true</active>
+    <errorConditionFormula>Text( Case__r.Product_Family__c) &lt;&gt; Text(  Asset__r.Product2.Family)</errorConditionFormula>
+    <errorMessage>Please make Sure Case Product Family and Asset product family is same</errorMessage>
+</ValidationRule>

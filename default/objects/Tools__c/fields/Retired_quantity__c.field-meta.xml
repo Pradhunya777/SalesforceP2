@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retired_quantity__c</fullName>
+    <externalId>false</externalId>
+    <label>Retired quantity</label>
+    <summarizedField>Tools_Entry__c.Quantity__c</summarizedField>
+    <summaryFilterItems>
+        <field>Tools_Entry__c.Type__c</field>
+        <operation>equals</operation>
+        <value>RETIRED</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Tools_Entry__c.Tools__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

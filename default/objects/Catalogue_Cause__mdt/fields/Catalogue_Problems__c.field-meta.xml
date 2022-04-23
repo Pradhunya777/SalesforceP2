@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catalogue_Problems__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Catalogue Problems</label>
+    <referenceTo>Catalogue_Problems__mdt</referenceTo>
+    <relationshipLabel>Catalogue Cause</relationshipLabel>
+    <relationshipName>Catalogue_Cause</relationshipName>
+    <required>false</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

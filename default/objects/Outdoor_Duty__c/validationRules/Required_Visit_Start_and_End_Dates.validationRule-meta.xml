@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Visit_Start_and_End_Dates</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+	OR(
+		ISNULL(Domestic_Visit_Start_Date__c),
+		ISNULL(Domestic_Visit_End_Date__c),
+		AND(
+		 NOT( ISNULL(Domestic_Visit_Start_Date__c) ),
+			NOT( ISNULL(Domestic_Visit_End_Date__c) ),
+			Domestic_Visit_Start_Date__c &gt; Domestic_Visit_End_Date__c,
+			Domestic_Visit_End_Date__c &lt; Domestic_Visit_Start_Date__c
+		)
+	),
+	OR(
+		ISNULL(International_Visit_Start_Date__c),
+		ISNULL(International_Visit_End_Date__c),
+		AND(
+		 NOT( ISNULL(International_Visit_Start_Date__c) ),
+			NOT( ISNULL(International_Visit_End_Date__c) ),
+			International_Visit_Start_Date__c &gt; International_Visit_End_Date__c,
+			International_Visit_End_Date__c &lt; International_Visit_Start_Date__c
+		)
+	)
+)</errorConditionFormula>
+    <errorMessage>Invalid date</errorMessage>
+</ValidationRule>

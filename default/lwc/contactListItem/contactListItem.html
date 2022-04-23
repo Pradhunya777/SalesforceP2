@@ -1,0 +1,10 @@
+<template>
+    <a href="#" onclick={selectHandler}>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-tile label={contact.Name} type="media">
+                <lightning-icon slot="media" icon-name="standard:contact"></lightning-icon>
+                    <p class="slds-truncate"><lightning-formatted-email value={contact.Email}></lightning-formatted-email></p>                
+            </lightning-tile>
+        </div> 
+    </a>    
+</template>

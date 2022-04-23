@@ -1,0 +1,8 @@
+<template>
+    <lightning-input type="search" onchange={handleKeyChange} placeholder="Search Account Record" class="slds-var-m-bottom_small" label="Search" value={accountName}>
+
+    </lightning-input>
+    <template for:each={accountList} for:item="accountObj" for:index="index">
+    <option key={accountObj.Id}>{accountObj.Name} &nbsp;&nbsp; {accountObj.Id}</option>  
+    </template>              
+</template>

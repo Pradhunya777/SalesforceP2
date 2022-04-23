@@ -1,0 +1,15 @@
+.THIS {
+    background-color : red;
+    font-size:30px
+   
+}
+.THIS .pd{
+    color : blue; 
+    font-size:60px
+}
+.THIS .pd1{
+    border : 1px solid black;
+}
+.THIS .pd2{
+    color : pink; 
+}

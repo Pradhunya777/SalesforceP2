@@ -1,0 +1,8 @@
+<apex:page standardController="Account">
+    <apex:pageBlock title="Account Details">
+        <apex:pageBlockSection >
+            //Provide an record ID
+          	<apex:detail relatedList="true"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

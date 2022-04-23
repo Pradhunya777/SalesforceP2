@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Data related wire demo">
+        <template for:each={data} for:item="acc">
+            <p key={acc.id}>{acc.Name} &nbsp; {acc.id}</p>
+        </template>
+    </lightning-card>
+</template>

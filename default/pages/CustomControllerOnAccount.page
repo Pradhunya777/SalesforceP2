@@ -1,0 +1,21 @@
+<apex:page controller="MyAccountController" extensions="leadExtension">
+    <apex:pageBlock title="My Account"> 
+    	<apex:pageBlockTable value="{!accountList}" var="Item">
+        	<apex:column value="{!Item.Name}"/>
+            <apex:column value="{!Item.Id}"/>
+            <apex:column value="{!Item.CreatedDate}"/>
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Lead Records">
+     
+        <apex:pageBlockTable value="{!lList}" var="l">
+        
+            <apex:column value="{!l.Name}"/>
+            <apex:column value="{!l.Status}"/>
+        
+        </apex:pageBlockTable>
+    
+    </apex:pageBlock>
+    
+</apex:page>

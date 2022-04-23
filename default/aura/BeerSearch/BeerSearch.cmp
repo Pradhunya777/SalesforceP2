@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:registerEvent name="BeerEvent" type="c:searchEvent" />
+	<div class="slds-p-around_small">
+        <lightning:input  
+                         name="inline-search-input"
+                         label="Beer Search"
+                         type="search"
+                         varient="label-hidden"
+                         aura:id="searchInput" />
+    
+    </div>
+</aura:component>

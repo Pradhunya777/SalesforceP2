@@ -1,0 +1,28 @@
+<aura:component implements="force:hasRecordId,flexipage:availableforAllPageTypes">
+    <aura:attribute name="firstNumber" type="integer" access="public" />
+    <aura:attribute name="secondNumber" type="integer" access="public" />
+
+    
+    <div>
+        <lightning:input type="number" name="input1" label="Enter First Number" 
+                         placeholder="Enter Number"
+                         value="{!v.firstNumber}"/><br />
+        <lightning:input type="number" name="input2" label="Enter Second Number"
+                         placeholder="Enter Number"
+                         value="{!v.secondNumber}"/>
+        <br />
+        Concatenation of {!v.firstNumber} + {!v.secondNumber} 
+        = {!add(v.firstNumber,v.secondNumber)}<br /><br />
+        Substraction of {!v.firstNumber} - {!v.secondNumber} 
+        = {!sub(v.firstNumber,v.secondNumber)}<br /><br />
+        Multiplication of {!v.firstNumber} * {!v.secondNumber} 
+        = {!mult(v.firstNumber,v.secondNumber)}<br /><br />
+        Division of {!v.firstNumber} / {!v.secondNumber} 
+        = {!div(v.firstNumber,v.secondNumber)}<br /><br />
+        Percentage of {!v.firstNumber} % {!v.secondNumber} 
+        = {!div(mult(v.firstNumber,v.secondNumber),100)}     
+        
+    
+    </div>
+	
+</aura:component>

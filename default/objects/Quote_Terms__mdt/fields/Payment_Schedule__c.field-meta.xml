@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Schedule__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Payment Schedule</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TT Payment</fullName>
+                <default>true</default>
+                <label>TT Payment</label>
+            </value>
+            <value>
+                <fullName>LC Payment</fullName>
+                <default>false</default>
+                <label>LC Payment</label>
+            </value>
+            <value>
+                <fullName>TT or LC Payment</fullName>
+                <default>false</default>
+                <label>TT or LC Payment</label>
+            </value>
+            <value>
+                <fullName>CAD basis payment</fullName>
+                <default>false</default>
+                <label>CAD basis payment</label>
+            </value>
+            <value>
+                <fullName>Security Deposit against LC payment</fullName>
+                <default>false</default>
+                <label>Security Deposit against LC payment</label>
+            </value>
+            <value>
+                <fullName>SWIFT Payment</fullName>
+                <default>false</default>
+                <label>SWIFT Payment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

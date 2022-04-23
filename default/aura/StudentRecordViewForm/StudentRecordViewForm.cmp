@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" 
+                access="global" >
+    
+    <!--For static record<lightning:recordViewForm recordId="a78954FGT789JH8" objectApiName="Student__c">-->
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Student__c">
+        <div class="slds-box">            
+            <lightning:outputField fieldName="Full_Name__c" />
+            <lightning:outputField fieldName="Phone__c" />
+            <lightning:outputField fieldName="Email__c" />
+            <lightning:outputField fieldName="Total_Fees__c" />
+        </div>
+    </lightning:recordViewForm>
+	
+</aura:component>

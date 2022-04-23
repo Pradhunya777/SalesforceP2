@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_to_be_shared</fullName>
+    <active>true</active>
+    <description>I),</description>
+    <errorConditionFormula>AND(Share_With_Management__c, OR(ISNULL( Date__c), ISBLANK(Objective_Of_Interaction__c) ,  ISBLANK(DiscussionDetails__c), ISBLANK(Summary_to_be_Shared__c),  ISBLANK(TEXT(Venue__c))))</errorConditionFormula>
+    <errorMessage>All fields are mandatory if summary to be shared checked.</errorMessage>
+</ValidationRule>

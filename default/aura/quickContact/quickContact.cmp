@@ -1,0 +1,19 @@
+<aura:component controller="quickContactController" implements="force:hasRecordId,flexipage:availableForAllPageTypes,force:hassobjectName">
+    <aura:attribute name="accountId" type="String" />
+    <aura:registerEvent name="quickContact" type="c:quickConEvent" />
+    <aura:attribute name="createContact" type="Contact" default="{
+                                                                    sobjectName : 'Contact',
+                                                                    FirstName : '',
+                                                                    LastName : '',
+                                                                    Email : '',
+                                                                    Phone : '',
+                                                                  }" />
+    <div>
+        <lightning:input type="text" value="{!v.createContact.FirstName}" label="FirstName" required="true" /><br />
+        <lightning:input type="text" value="{!v.createContact.LastName}" label="LastName" required="true" /><br />
+        <lightning:input type="Email" value="{!v.createContact.Email}" label="Email" required="true" /><br />
+        <lightning:input type="phone" value="{!v.createContact.Phone}" label="Phone" required="true" /><br />
+        <lightning:button label="CreateContact" variant="brand" onclick="{!c.doSave}"/>
+    </div> 
+
+</aura:component>

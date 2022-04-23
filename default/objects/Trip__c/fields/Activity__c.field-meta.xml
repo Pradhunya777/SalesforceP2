@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity__c</fullName>
+    <externalId>false</externalId>
+    <label>Activity</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Visit - Design Develop</fullName>
+                <default>false</default>
+                <label>Customer Visit - Design Develop</label>
+            </value>
+            <value>
+                <fullName>Customer Visit - Courtesy S&amp;M</fullName>
+                <default>false</default>
+                <label>Customer Visit - Courtesy S&amp;M</label>
+            </value>
+            <value>
+                <fullName>Customer Visit - Courtesy MFG</fullName>
+                <default>false</default>
+                <label>Customer Visit - Courtesy MFG</label>
+            </value>
+            <value>
+                <fullName>Customer Visit - Courtesy Spare</fullName>
+                <default>false</default>
+                <label>Customer Visit - Courtesy Spare</label>
+            </value>
+            <value>
+                <fullName>Customer Visit - Training</fullName>
+                <default>false</default>
+                <label>Customer Visit - Training</label>
+            </value>
+            <value>
+                <fullName>FMG</fullName>
+                <default>false</default>
+                <label>FMG</label>
+            </value>
+            <value>
+                <fullName>Exhibition Visit</fullName>
+                <default>false</default>
+                <label>Exhibition Visit</label>
+            </value>
+            <value>
+                <fullName>Business Promotion</fullName>
+                <default>false</default>
+                <label>Business Promotion</label>
+            </value>
+            <value>
+                <fullName>HO/BO Visit</fullName>
+                <default>false</default>
+                <label>HO/BO Visit</label>
+            </value>
+            <value>
+                <fullName>Interview</fullName>
+                <default>false</default>
+                <label>Interview</label>
+            </value>
+            <value>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+                <label>Customer Visit</label>
+            </value>
+            <value>
+                <fullName>Legal Work</fullName>
+                <default>false</default>
+                <label>Legal Work</label>
+            </value>
+            <value>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+                <label>Meeting</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Course</fullName>
+                <default>false</default>
+                <label>Course</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Supplier Visit</fullName>
+                <default>false</default>
+                <label>Supplier Visit</label>
+            </value>
+            <value>
+                <fullName>Visa Formality</fullName>
+                <default>false</default>
+                <label>Visa Formality</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

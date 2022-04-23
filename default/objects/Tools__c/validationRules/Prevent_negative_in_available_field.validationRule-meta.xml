@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_negative_in_available_field</fullName>
+    <active>true</active>
+    <errorConditionFormula>Available_to_use__c &lt;0</errorConditionFormula>
+    <errorMessage>Negative value is not allowed in available to use quantity field, Please enter positive number.</errorMessage>
+</ValidationRule>

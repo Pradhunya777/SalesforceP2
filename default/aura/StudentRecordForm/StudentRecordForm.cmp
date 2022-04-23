@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes"
+controller="StudentSearchController"
+access="global" > 
+	
+    <aura:attribute name="data" type="object" />
+    <aura:attribute name="columns" type="list" />
+    <aura:attribute name="recordId" type="string" />
+    <aura:attribute name="showDetails" type="boolean" default="false" />
+    <aura:attribute name="myStudent" type="string[]" default="[Id,Full_Name__c,Email__c,Phone__c,
+                                                              Total_Fees__c]" />
+
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+<lightning:layout>
+    <lightning:layoutItem size="8" padding="around_small">
+        <lightning:card title="All Students">
+            <lightning:datatable
+                                columns="{!v.columns}"
+                                data="{!v.data}"
+                                keyField="id"
+                                onsave="{!c.onsave}"
+                                hideCheckboxColumn="true"
+                                onrowaction="{!c.handleRowAction}" />
+        </lightning:card>
+    </lightning:layoutItem>
+    <lightning:layoutItem size="4" padding="around_small">
+        <aura:if isTrue="{!v.showDetails}">
+            <lightning:card title="Record Details">
+                <lightning:recordForm
+                                        recordId="{!v.recordId}"
+                                        objectApiName="Student__c"
+                                        fields="{!v.myStudent}"
+                                        columns="1"
+                                        mode="view" />
+            </lightning:card>
+        </aura:if>
+    </lightning:layoutItem>
+</lightning:layout>
+
+</aura:component>

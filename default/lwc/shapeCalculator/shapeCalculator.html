@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Shape Calculator">
+        <lightning-layout multiple-rows>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" label="Enter Side" 
+                                    onchange={sideChangeHandler}></lightning-input><br />
+                <lightning-button label="Calculate Area Of Square"  value={Result}
+                                     onclick={calculateAreaOfSquare}></lightning-button>&nbsp;&nbsp;
+                <lightning-formatted-text value={ResultSquare}></lightning-formatted-text>
+            </lightning-layout-item> 
+
+ 
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" label="Enter Lenght" 
+                                    onchange={lenghtChangeHandler}></lightning-input>
+                <lightning-input type="number" label="Enter Breadth" 
+                                    onchange={breadthChangeHandler}></lightning-input><br />
+                <lightning-button label="Calculate Area Of Rectangle"
+                                    onclick={calculateAreaOfRectangle}></lightning-button>&nbsp;&nbsp;
+                <lightning-formatted-text value={ResultRectangle}></lightning-formatted-text>                                    
+            </lightning-layout-item>   
+                            
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" label="Enter Diagonal 1" 
+                                    onchange={diagonalOneChangeHandler}></lightning-input>
+                <lightning-input type="number" label="Enter Diagonal 2" 
+                                    onchange={diagonalTwoChangeHandler}></lightning-input><br />
+                <lightning-button label="Calculate Area Of Rhombus"
+                                     onclick={calculateAreaOfRhombus}></lightning-button>&nbsp;&nbsp;
+                <lightning-formatted-text value={ResultRhombus}></lightning-formatted-text>
+            </lightning-layout-item>   
+            
+        </lightning-layout>
+    </lightning-card>        
+</template>

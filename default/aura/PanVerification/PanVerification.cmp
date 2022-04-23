@@ -1,0 +1,84 @@
+<aura:component controller="PanVerification" implements="force:lightningQuickAction,force:hasRecordId">
+	<aura:attribute name="isValidPAN" type="Boolean" default="false" />
+    <aura:attribute name="panResult" type="Object" />
+    <aura:attribute name="account" type="Object" />
+    <aura:attribute name="isNameDiffer" type="Boolean" default="false" />    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="isSpinner" type="Boolean" default="false" />
+
+    <ltng:require scripts="{!$Resource.AuraUtils}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.isValidPAN}">
+        <div class="quick-action-container">
+            <div class="pan-info-table-wrap">
+                <table class="slds-table slds-table_cell-buffer" border="1" style="border:2px #dddbda solid;">
+                    <tbody>
+                        <tr class="slds-hint-parent">                        
+                            <td data-label="field" width="50%">
+                                <div class="slds-truncate">PAN Number</div>
+                            </td>
+                            <td data-label="field-value">
+                                <div class="slds-truncate">{!v.account.PAN_Number__c}</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-hint-parent">
+                            <td data-label="field">
+                                <div class="slds-truncate">Salesforce Account Name</div>
+                            </td>
+                            <td data-label="field-value">
+                                <div class="slds-truncate">
+                                    <aura:if isTrue="{!v.isNameDiffer}"><span style="color:red;">{!v.account.Name}</span></aura:if>
+                                    <aura:if isTrue="{!not(v.isNameDiffer)}"><span>{!v.account.Name}</span></aura:if>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="slds-hint-parent">
+                            <td data-label="field">
+                                <div class="slds-truncate">Name on PAN Card</div>
+                            </td>
+                            <td data-label="field-value">
+                                <div class="slds-truncate">{!v.panResult.user_full_name}</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-hint-parent">
+                            <td data-label="field">
+                                <div class="slds-truncate">PAN Status</div>
+                            </td>
+                            <td data-label="field-value">
+                                <div class="slds-truncate">{!v.panResult.pan_status}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+                <div class="help-text" style="display:block;">                    
+                    <lightning:icon iconName="utility:info" title="Info" size="xx-small" />
+                    <span style="margin-left:3px;font-size:11px;">PAN name and Account name could be different only in case of Properitor</span>
+                </div>
+            </div>
+            
+            <div class="comments-wrap">                
+                <lightning:textarea aura:id="panComment" value="PAN Number is valid" label="PAN Verification comments" max-length="255"></lightning:textarea>
+                
+                <div style="margin-top:10px;">
+                    <lightning:input aura:id="copyPANName" type="checkbox" label="Copy PAN Card Name to Account?" checked="true"></lightning:input>
+                </div>
+            </div>
+            
+            <div class="button-wrap">
+                <div class="slds-grid">
+                    <div class="slds-col" style="text-align:right; padding:5px;">
+                        <lightning:button variant="success" label="Set as Verified" title="Success" onclick="{!c.setAsVerified}" class="verify-btn" />
+                    </div>
+                    <div class="slds-col" style="text-align:left; padding:5px;">
+                        <lightning:button variant="destructive" label="Set as Invalid" title="Destructive action" onclick="{!c.setAsInvalid}" class="verify-btn" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>    
+
+    <aura:if isTrue="{!v.isSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large" />
+    </aura:if>
+</aura:component>

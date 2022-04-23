@@ -1,0 +1,39 @@
+<template>
+    
+    <lightning-card title="Type picklist values from account using(ConboBox)" icon-name="custom:custom67">
+        <p class="slds-var-p-horizontal_small">
+        <template if:true={typeValues.data}>
+            <div class="slds-var-m-around_medium">
+                <lightning-combobox 
+                    name="AccountType"
+                    label="Account type"
+                    value={selectedAccountType} 
+                    placeholder="Select Progress"
+                    options={typeValues.data.values}
+                    onchange={handleTypeChange}>
+                </lightning-combobox>
+                <p>Selected Account Type is : <b>{selectedAccountType}</b></p>
+            </div>
+        </template>
+        </p>
+    </lightning-card>
+
+    <lightning-card title="Lead Source record type picklist values from contact using(ComboBox)" icon-name="custom:custom67">
+        <p class="slds-var-p-horizontal_small">
+        <template if:true={leadSourceValues.data}>
+            <div class="slds-var-m-around_medium">
+                <lightning-combobox 
+                    name="LeadSource"
+                    label="Lead Source"
+                    value={selectedLeadSource} 
+                    placeholder="Select Progress"
+                    options={leadSourceValues.data.values}
+                    onchange={handleLeadSourceChange}>
+                </lightning-combobox>
+                <p>Selected LeadSource Type is : <b>{selectedLeadSource}</b></p>
+            </div>
+        </template>
+        </p>
+    </lightning-card>
+
+</template>

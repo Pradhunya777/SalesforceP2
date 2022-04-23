@@ -1,0 +1,37 @@
+<apex:page standardController="Account" extensions="leadExtension,studentExtension" sidebar="true">
+    
+    <apex:form >  
+        <apex:pageBlock title="Account Create Page"> 
+            
+        	<apex:pageBlockSection > 
+            	<apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.NumberOfEmployees}"/>
+                <apex:inputField value="{!Account.Rating}"/>
+                <apex:inputField value="{!Account.Type}"/>   
+            </apex:pageBlockSection> 
+            <apex:pageBlockButtons >
+            	<apex:commandButton action="{!Save}" value="Save The Record"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>   
+        
+        <apex:pageBlock title="Lead Records">
+        
+        	<apex:pageBlockTable value="{!lList}" var="l">
+        		<apex:column value="{!l.Name}"/>
+            	<apex:column value="{!l.Status}"/>			         
+        </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Student Records">
+        
+        	<apex:pageBlockTable value="{!sList}" var="s">
+                <apex:column value="{!s.ID}"/>	
+        		<apex:column value="{!s.Name}"/>		         
+        </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

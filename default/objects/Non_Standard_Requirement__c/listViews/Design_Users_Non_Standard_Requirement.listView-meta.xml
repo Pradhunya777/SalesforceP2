@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design_Users_Non_Standard_Requirement</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Design Users</label>
+    <queue>Design_Users</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>
